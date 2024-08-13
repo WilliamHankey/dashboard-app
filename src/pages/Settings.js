@@ -1,6 +1,14 @@
 import React from 'react';
 
 const Settings = () => {
+  const dummySettings = [
+    { title: 'Account Settings', description: 'Manage your account details and preferences.' },
+    { title: 'Notification Settings', description: 'Customize your notification preferences.' },
+    { title: 'Privacy Settings', description: 'Control your privacy settings and data sharing.' },
+    { title: 'Language Settings', description: 'Set your preferred language.' },
+    { title: 'Security Settings', description: 'Manage your security options, including 2FA.' },
+  ];
+
   return (
     <>
       <header className="flex flex-col sm:flex-row items-center justify-between bg-white shadow p-4 rounded-lg mb-6">
@@ -21,10 +29,12 @@ const Settings = () => {
       <section className="bg-white p-4 rounded-lg shadow">
         <h2 className="font-bold text-lg mb-4">General Settings</h2>
         <div className="space-y-4">
-          <div className="bg-gray-100 p-4 rounded-lg shadow">
-            <h3 className="font-bold">Setting Title</h3>
-            <p className="text-sm text-gray-600">Description of the setting.</p>
-          </div>
+          {dummySettings.map((setting, index) => (
+            <div key={index} className="bg-gray-100 p-4 rounded-lg shadow">
+              <h3 className="font-bold">{setting.title}</h3>
+              <p className="text-sm text-gray-600">{setting.description}</p>
+            </div>
+          ))}
         </div>
       </section>
     </>
