@@ -5,12 +5,12 @@ const Projects = () => {
   const navigate = useNavigate();
 
   const dummyProjects = [
-    { id: 1, title: 'Project Alpha', description: 'A detailed description of Project Alpha.', image: 'https://placehold.co/300x150', details: 'More details about Project Alpha.' },
-    { id: 2, title: 'Project Beta', description: 'A detailed description of Project Beta.', image: 'https://placehold.co/300x150', details: 'More details about Project Beta.' },
-    { id: 3, title: 'Project Gamma', description: 'A detailed description of Project Gamma.', image: 'https://placehold.co/300x150', details: 'More details about Project Gamma.' },
-    { id: 4, title: 'Project Delta', description: 'A detailed description of Project Delta.', image: 'https://placehold.co/300x150', details: 'More details about Project Delta.' },
-    { id: 5, title: 'Project Epsilon', description: 'A detailed description of Project Epsilon.', image: 'https://placehold.co/300x150', details: 'More details about Project Epsilon.' },
-    { id: 6, title: 'Project Zeta', description: 'A detailed description of Project Zeta.', image: 'https://placehold.co/300x150', details: 'More details about Project Zeta.' },
+    { id: 1, title: 'Project Alpha', description: 'A detailed description of Project Alpha.', image: 'https://placehold.co/400x150', details: 'More details about Project Alpha.' },
+    { id: 2, title: 'Project Beta', description: 'A detailed description of Project Beta.', image: 'https://placehold.co/400x150', details: 'More details about Project Beta.' },
+    { id: 3, title: 'Project Gamma', description: 'A detailed description of Project Gamma.', image: 'https://placehold.co/400x150', details: 'More details about Project Gamma.' },
+    { id: 4, title: 'Project Delta', description: 'A detailed description of Project Delta.', image: 'https://placehold.co/400x150', details: 'More details about Project Delta.' },
+    { id: 5, title: 'Project Epsilon', description: 'A detailed description of Project Epsilon.', image: 'https://placehold.co/400x150', details: 'More details about Project Epsilon.' },
+    { id: 6, title: 'Project Zeta', description: 'A detailed description of Project Zeta.', image: 'https://placehold.co/400x150', details: 'More details about Project Zeta.' },
   ];
 
   const handleProjectClick = (id) => {

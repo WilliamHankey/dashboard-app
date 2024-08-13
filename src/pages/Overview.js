@@ -9,10 +9,10 @@ const Overview = () => {
   ]);
 
   const [projects] = useState([
-    { id: 1, title: 'BuildNoon Project', description: 'Construction of a new office building in downtown.', image: 'https://placehold.co/300x150' },
-    { id: 2, title: 'Market Expansion', description: 'Expanding market reach to the northern region.', image: 'https://placehold.co/300x150' },
-    { id: 3, title: 'Website Redesign', description: 'Revamping the company website for better UX/UI.', image: 'https://placehold.co/300x150' },
-    { id: 4, title: 'Product Launch', description: 'Launching the new product line in Q4.', image: 'https://placehold.co/300x150' },
+    { id: 1, title: 'BuildNoon Project', description: 'Construction of a new office building in downtown.', image: 'https://placehold.co/400x150' },
+    { id: 2, title: 'Market Expansion', description: 'Expanding market reach to the northern region.', image: 'https://placehold.co/400x150' },
+    { id: 3, title: 'Website Redesign', description: 'Revamping the company website for better UX/UI.', image: 'https://placehold.co/400x150' },
+    { id: 4, title: 'Product Launch', description: 'Launching the new product line in Q4.', image: 'https://placehold.co/400x150' },
   ]);
 
   const [updates] = useState([
