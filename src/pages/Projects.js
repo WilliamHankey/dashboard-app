@@ -1,14 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
+  const navigate = useNavigate();
+
   const dummyProjects = [
-    { title: 'Project Alpha', description: 'A detailed description of Project Alpha.', image: 'https://placehold.co/200x150' },
-    { title: 'Project Beta', description: 'A detailed description of Project Beta.', image: 'https://placehold.co/200x150' },
-    { title: 'Project Gamma', description: 'A detailed description of Project Gamma.', image: 'https://placehold.co/200x150' },
-    { title: 'Project Delta', description: 'A detailed description of Project Delta.', image: 'https://placehold.co/200x150' },
-    { title: 'Project Epsilon', description: 'A detailed description of Project Epsilon.', image: 'https://placehold.co/200x150' },
-    { title: 'Project Zeta', description: 'A detailed description of Project Zeta.', image: 'https://placehold.co/200x150' },
+    { id: 1, title: 'Project Alpha', description: 'A detailed description of Project Alpha.', image: 'https://placehold.co/200x150', details: 'More details about Project Alpha.' },
+    { id: 2, title: 'Project Beta', description: 'A detailed description of Project Beta.', image: 'https://placehold.co/200x150', details: 'More details about Project Beta.' },
+    { id: 3, title: 'Project Gamma', description: 'A detailed description of Project Gamma.', image: 'https://placehold.co/200x150', details: 'More details about Project Gamma.' },
+    { id: 4, title: 'Project Delta', description: 'A detailed description of Project Delta.', image: 'https://placehold.co/200x150', details: 'More details about Project Delta.' },
+    { id: 5, title: 'Project Epsilon', description: 'A detailed description of Project Epsilon.', image: 'https://placehold.co/200x150', details: 'More details about Project Epsilon.' },
+    { id: 6, title: 'Project Zeta', description: 'A detailed description of Project Zeta.', image: 'https://placehold.co/200x150', details: 'More details about Project Zeta.' },
   ];
+
+  const handleProjectClick = (id) => {
+    navigate(`/projects/${id}`);
+  };
 
   return (
     <>
@@ -30,8 +37,12 @@ const Projects = () => {
       <section className="bg-white p-4 rounded-lg shadow">
         <h2 className="font-bold text-lg mb-4">All Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {dummyProjects.map((project, index) => (
-            <div key={index} className="bg-gray-100 p-4 rounded-lg shadow">
+          {dummyProjects.map((project) => (
+            <div 
+              key={project.id} 
+              className="bg-gray-100 p-4 rounded-lg shadow cursor-pointer"
+              onClick={() => handleProjectClick(project.id)}
+            >
               <img src={project.image} alt={project.title} className="rounded-lg mb-4" />
               <h3 className="font-bold">{project.title}</h3>
               <p className="text-sm text-gray-600">{project.description}</p>

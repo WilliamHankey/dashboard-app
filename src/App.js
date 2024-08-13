@@ -1,12 +1,68 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Add Link import here
 import Overview from './pages/Overview';
 import Projects from './pages/Projects';
 import Tasks from './pages/Tasks';
 import Team from './pages/Team';
 import Settings from './pages/Settings';
+import ProjectDetails from './pages/ProjectDetails';
+import AddEditProject from './pages/AddEditProject';
+import TeamMemberDetails from './pages/TeamMemberDetails';
+
+
+const initialProjects = [
+  {
+    id: 1,
+    title: 'Project Alpha',
+    description: 'A detailed description of Project Alpha.',
+    image: 'https://via.placeholder.com/200x150',
+    details: 'More details about Project Alpha. This project focuses on developing an innovative software platform.',
+  },
+  {
+    id: 2,
+    title: 'Project Beta',
+    description: 'A detailed description of Project Beta.',
+    image: 'https://via.placeholder.com/200x150',
+    details: 'More details about Project Beta. This project involves the development of a mobile application for online shopping.',
+  },
+  {
+    id: 3,
+    title: 'Project Gamma',
+    description: 'A detailed description of Project Gamma.',
+    image: 'https://via.placeholder.com/200x150',
+    details: 'More details about Project Gamma. This project is aimed at improving the cybersecurity infrastructure of a company.',
+  },
+  {
+    id: 4,
+    title: 'Project Delta',
+    description: 'A detailed description of Project Delta.',
+    image: 'https://via.placeholder.com/200x150',
+    details: 'More details about Project Delta. This project focuses on creating a new marketing strategy for a global brand.',
+  },
+  {
+    id: 5,
+    title: 'Project Epsilon',
+    description: 'A detailed description of Project Epsilon.',
+    image: 'https://via.placeholder.com/200x150',
+    details: 'More details about Project Epsilon. This project is centered on the design and implementation of a new CRM system.',
+  },
+  {
+    id: 6,
+    title: 'Project Zeta',
+    description: 'A detailed description of Project Zeta.',
+    image: 'https://via.placeholder.com/200x150',
+    details: 'More details about Project Zeta. This project involves the development of an AI-based recommendation engine.',
+  },
+];
+
+const initialWorkers = [
+  // Dummy workers with real images
+];
 
 function App() {
+  const [projects, setProjects] = useState(initialProjects);
+  const [workers] = useState(initialWorkers); // Removed setWorkers since it's not used
+
   return (
     <Router>
       <div className="flex flex-col md:flex-row h-screen overflow-hidden">
@@ -36,9 +92,14 @@ function App() {
         <main className="flex-1 flex flex-col p-4 overflow-y-auto">
           <Routes>
             <Route path="/" element={<Overview />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<Projects projects={projects} />} />
+            <Route path="/projects/:id" element={<ProjectDetails projects={projects} />} />
+            <Route path="/projects/new" element={<AddEditProject projects={projects} setProjects={setProjects} />} />
+            <Route path="/projects/edit/:id" element={<AddEditProject projects={projects} setProjects={setProjects} />} />
+            <Route path="/projects/:id" element={<ProjectDetails projects={projects} />} />
+            <Route path="/team" element={<Team workers={workers} />} />
+            <Route path="/team/:id" element={<TeamMemberDetails workers={workers} />} />
             <Route path="/tasks" element={<Tasks />} />
-            <Route path="/team" element={<Team />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </main>
