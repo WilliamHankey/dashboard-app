@@ -8,14 +8,14 @@ const Overview = () => {
     { id: 3, title: 'Design Mockup Review', description: 'Review the design mockups with the design team.', dueDate: 'Next Week', completed: false },
   ]);
 
-  const [projects, setProjects] = useState([
+  const [projects] = useState([
     { id: 1, title: 'BuildNoon Project', description: 'Construction of a new office building in downtown.', image: 'https://placehold.co/200x150' },
     { id: 2, title: 'Market Expansion', description: 'Expanding market reach to the northern region.', image: 'https://placehold.co/200x150' },
     { id: 3, title: 'Website Redesign', description: 'Revamping the company website for better UX/UI.', image: 'https://placehold.co/200x150' },
     { id: 4, title: 'Product Launch', description: 'Launching the new product line in Q4.', image: 'https://placehold.co/200x150' },
   ]);
 
-  const [updates, setUpdates] = useState([
+  const [updates] = useState([
     { id: 1, title: 'Client Feedback Received', description: 'We received positive feedback on the recent project from the client.' },
     { id: 2, title: 'New Team Member', description: 'Welcome our new team member, Jane Doe, to the marketing team.' },
     { id: 3, title: 'Q3 Targets Achieved', description: 'Our team successfully achieved all the Q3 targets ahead of time.' },
